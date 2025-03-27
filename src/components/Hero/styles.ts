@@ -7,6 +7,18 @@ export const HeroContainer = styled.div`
   width: 100%;
   height: 100dvh;
   padding: 50px;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    height: auto;
+    min-height: 100dvh;
+  }
+
+  @media (max-width: 768px) {
+    padding: 15px;
+  }
 `;
 
 export const TextContent = styled.div`
@@ -14,17 +26,31 @@ export const TextContent = styled.div`
   z-index: 10;
   color: white;
 
+  @media (max-width: 1024px) {
+    max-width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
   h2 {
     color: #7e57c2;
     margin-bottom: 10px;
     background-color: rgba(126, 87, 194, 0.2);
     display: inline-block;
     padding: 5px 10px;
+
+    @media (max-width: 1024px) {
+      margin-bottom: 15px;
+    }
   }
 
   h1 {
     font-size: 3rem;
     margin-bottom: 20px;
+
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
   }
 
   p {
@@ -32,6 +58,10 @@ export const TextContent = styled.div`
     line-height: 1.6;
     margin-bottom: 30px;
     color: rgba(255, 255, 255, 0.7);
+
+    @media (max-width: 768px) {
+      font-size: 0.9rem;
+    }
   }
 `;
 
@@ -46,8 +76,14 @@ export const ConnectButton = styled.a`
   display: flex;
   align-items: center;
   gap: 6px;
-  max-width: 37.5%;
+  max-width: 37.4%;
   max-height: 100%;
+
+  @media (max-width: 1024px) {
+    max-width: 100%;
+    justify-content: center;
+    margin: 0 auto;
+  }
 
   &:hover {
     background-color: white;
@@ -58,6 +94,17 @@ export const ConnectButton = styled.a`
 export const AstronautContainer = styled.div`
   position: relative;
   z-index: 10;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    img {
+      max-width: 80%;
+      height: auto;
+    }
+  }
 `;
 
 export const StyledBackground = styled.div`
@@ -67,6 +114,7 @@ export const StyledBackground = styled.div`
   width: 100%;
   height: 100%;
   pointer-events: none;
+  overflow: hidden;
 `;
 
 export const BlueSphere = styled.div`
@@ -82,6 +130,10 @@ export const BlueSphere = styled.div`
   );
   border-radius: 50%;
   filter: blur(20px);
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
 `;
 
 export const SpaceRocket = styled.div`
@@ -93,6 +145,10 @@ export const SpaceRocket = styled.div`
   background: url("/rocket.png");
   background-size: contain;
   background-repeat: no-repeat;
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
 `;
 
 export const MovingLines = styled.div`
@@ -101,6 +157,10 @@ export const MovingLines = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
 
   div {
     position: absolute;
@@ -132,17 +192,8 @@ export const BackgroundImage = styled.div`
   width: 100%;
   height: 100%;
   background-image: url("/banner-bg.png");
-  background-size: 100% 100%; /* Aumenta a área para um efeito contínuo */
+  background-size: 100% 100%;
   background-position: center;
-  background-repeat: repeat; /* Mantém o fundo sempre preenchido */
+  background-repeat: repeat;
   z-index: -1;
-  /* animation: moveStars 30s linear infinite;
-
-  @keyframes moveStars {
-    0% {
-      background-position: 0px 0px;
-    }
-    100% {
-      background-position: 500px -500px;
-    } */
 `;

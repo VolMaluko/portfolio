@@ -1,47 +1,82 @@
 "use client";
-import Link from "next/link";
+import React, { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
 import * as S from "./styles";
-import { Linkedin } from "lucide-react";
-import { Facebook } from "lucide-react";
-import { Instagram } from "lucide-react";
-import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 export default function Navbar() {
-  const pathname = usePathname();
-  const isLoginPage = pathname === "/login";
-  const buttonText = isLoginPage ? "Go to Homepage" : "Go to Login Page";
-  const buttonHref = isLoginPage ? "/" : "/login";
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  const toggleMobileNav = () => {
+    setIsMobileNavOpen(!isMobileNavOpen);
+  };
+
+  const closeMobileNav = () => {
+    setIsMobileNavOpen(false);
+  };
+
+  if (!isClient) {
+    return null;
+  }
+
   return (
-    <S.NavContainer>
-      <S.NavContent>
-        <S.Logo>LOGO</S.Logo>
+    <>
+      <S.NavContainer>
+        <S.Logo>Portfolio</S.Logo>
         <S.NavLinks>
-          <Link href="/">Home</Link>
-          <Link href="/skills">Skills</Link>
-          <Link href="/projects">Projects</Link>
-          <div className="social-links">
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer">
-              <Linkedin color="white" size={24} />
-            </a>
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer">
-              <Facebook color="white" size={24} />
-            </a>
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer">
-              <Instagram color="white" size={24} />
-            </a>
-          </div>
-          <S.ConnectButton href={buttonHref}>{buttonText}</S.ConnectButton>
+          <Link href="/" passHref legacyBehavior>
+            <S.NavLink>Home</S.NavLink>
+          </Link>
+          <Link href="/about" passHref legacyBehavior>
+            <S.NavLink>About</S.NavLink>
+          </Link>
+          <Link href="/projects" passHref legacyBehavior>
+            <S.NavLink>Projects</S.NavLink>
+          </Link>
+          <Link href="/contact" passHref legacyBehavior>
+            <S.NavLink>Contact</S.NavLink>
+          </Link>
         </S.NavLinks>
-      </S.NavContent>
-    </S.NavContainer>
+      </S.NavContainer>
+
+      <S.MobileNavButton onClick={toggleMobileNav}>
+        {isMobileNavOpen ? <X size={24} /> : <Menu size={24} />}
+      </S.MobileNavButton>
+
+      <S.MobileSidebar $isOpen={isMobileNavOpen}>
+        <S.MobileSidebarLinks>
+          <Link href="/" passHref legacyBehavior>
+            <S.MobileSidebarLink onClick={closeMobileNav}>
+              Home
+            </S.MobileSidebarLink>
+          </Link>
+          <S.MobileSidebarDivider />
+          <Link href="/about" passHref legacyBehavior>
+            <S.MobileSidebarLink onClick={closeMobileNav}>
+              About
+            </S.MobileSidebarLink>
+          </Link>
+          <S.MobileSidebarDivider />
+          <Link href="/projects" passHref legacyBehavior>
+            <S.MobileSidebarLink onClick={closeMobileNav}>
+              Projects
+            </S.MobileSidebarLink>
+          </Link>
+          <S.MobileSidebarDivider />
+          <Link href="/contact" passHref legacyBehavior>
+            <S.MobileSidebarLink onClick={closeMobileNav}>
+              Contact
+            </S.MobileSidebarLink>
+          </Link>
+        </S.MobileSidebarLinks>
+      </S.MobileSidebar>
+
+      <S.Overlay $isOpen={isMobileNavOpen} onClick={toggleMobileNav} />
+    </>
   );
 }

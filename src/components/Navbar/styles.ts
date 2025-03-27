@@ -6,59 +6,107 @@ export const NavContainer = styled.nav`
   left: 0;
   width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px 0;
-  background-color: transparent;
-  color: white;
-  z-index: 100;
-`;
-
-export const NavContent = styled.div`
-  width: 100%;
-  max-width: 1777px;
-  display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 50px;
+  padding: 1rem 2rem;
+  background-color: transparent;
+  z-index: 100;
+  color: white;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const Logo = styled.div`
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: bold;
 `;
 
 export const NavLinks = styled.div`
   display: flex;
-  align-items: center;
-  gap: 30px;
+  gap: 1.5rem;
+`;
 
-  a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-  }
+export const NavLink = styled.a`
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s ease;
 
-  .social-links {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    margin: 0 20px;
+  &:hover {
+    color: #7e57c2;
   }
 `;
 
-export const ConnectButton = styled.a`
-  background-color: transparent;
+export const MobileNavButton = styled.button`
+  display: none;
+  background: none;
+  border: none;
   color: white;
-  border: 1px solid white;
-  padding: 10px 20px;
-  border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
-  transition: all 0.3s ease;
+
+  @media (max-width: 768px) {
+    display: block;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 200;
+  }
+`;
+
+export const MobileSidebar = styled.div<{ $isOpen: boolean }>`
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: ${(props) => (props.$isOpen ? "0" : "-100%")};
+    width: 250px;
+    height: 100vh;
+    background-color: black;
+    color: white;
+    transition: left 0.3s ease;
+    z-index: 150;
+    padding: 4rem 0;
+  }
+`;
+
+export const MobileSidebarLinks = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const MobileSidebarLink = styled.a`
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  padding: 1rem 2rem;
+  transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: white;
-    color: black;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+`;
+
+export const MobileSidebarDivider = styled.div`
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0;
+`;
+
+export const Overlay = styled.div<{ $isOpen: boolean }>`
+  display: none;
+
+  @media (max-width: 768px) {
+    display: ${(props) => (props.$isOpen ? "block" : "none")};
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
   }
 `;
