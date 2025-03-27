@@ -4,8 +4,13 @@ import * as S from "./styles";
 import { Linkedin } from "lucide-react";
 import { Facebook } from "lucide-react";
 import { Instagram } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
+  const pathname = usePathname();
+  const isLoginPage = pathname === "/login";
+  const buttonText = isLoginPage ? "Go to Homepage" : "Go to Login Page";
+  const buttonHref = isLoginPage ? "/" : "/login";
   return (
     <S.NavContainer>
       <S.NavContent>
@@ -34,7 +39,7 @@ export default function Navbar() {
               <Instagram color="white" size={24} />
             </a>
           </div>
-          <S.ConnectButton>Lets Connect</S.ConnectButton>
+          <S.ConnectButton href={buttonHref}>{buttonText}</S.ConnectButton>
         </S.NavLinks>
       </S.NavContent>
     </S.NavContainer>

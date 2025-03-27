@@ -27,8 +27,8 @@ export default function HeroSection() {
           since the 1500s, when an unknown printer took a galley of type and
           scrambled it to make a type specimen book.
         </p>
-        <S.ConnectButton>
-          Lets Connect
+        <S.ConnectButton href="/login">
+          Look one of my works &quot;Login Page&quot;
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"

@@ -47,7 +47,7 @@ export const NavLinks = styled.div`
   }
 `;
 
-export const ConnectButton = styled.button`
+export const ConnectButton = styled.a`
   background-color: transparent;
   color: white;
   border: 1px solid white;

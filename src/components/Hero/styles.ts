@@ -35,17 +35,19 @@ export const TextContent = styled.div`
   }
 `;
 
-export const ConnectButton = styled.button`
+export const ConnectButton = styled.a`
   background-color: transparent;
   color: white;
   border: 1px solid white;
-  padding: 12px 24px;
+  padding: 12px 5px 12px 20px;
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 6px;
+  max-width: 37.5%;
+  max-height: 100%;
 
   &:hover {
     background-color: white;
