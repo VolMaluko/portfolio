@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Github, Menu, X } from "lucide-react";
 import * as S from "./styles";
 import Link from "next/link";
 
@@ -38,8 +38,10 @@ export default function Navbar() {
           <Link href="/projects" passHref legacyBehavior>
             <S.NavLink>Projects</S.NavLink>
           </Link>
-          <Link href="/contact" passHref legacyBehavior>
-            <S.NavLink>Contact</S.NavLink>
+          <Link href="https://github.com/VolMaluko/" passHref legacyBehavior>
+            <S.NavLink>
+              <Github />
+            </S.NavLink>
           </Link>
         </S.NavLinks>
       </S.NavContainer>
