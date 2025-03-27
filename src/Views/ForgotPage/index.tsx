@@ -5,7 +5,7 @@ import { Mail } from "lucide-react";
 export default function ForgotPage() {
   const [email, setEmail] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Forgot Password submitted", { email });
   };

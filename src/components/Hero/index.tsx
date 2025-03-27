@@ -28,7 +28,7 @@ export default function HeroSection() {
           scrambled it to make a type specimen book.
         </p>
         <S.ConnectButton>
-          Let's Connect
+          Lets Connect
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"

@@ -34,7 +34,7 @@ export default function Navbar() {
               <Instagram color="white" size={24} />
             </a>
           </div>
-          <S.ConnectButton>Let's Connect</S.ConnectButton>
+          <S.ConnectButton>Lets Connect</S.ConnectButton>
         </S.NavLinks>
       </S.NavContent>
     </S.NavContainer>
