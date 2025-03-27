@@ -66,7 +66,7 @@ export default function LoginPage() {
           </S.Form>
           <S.SubmitButton type="submit">Sign In</S.SubmitButton>
           <S.SignupText>
-            Don't have an account?{" "}
+            Don t have an account?{" "}
             <S.SignupLink href="/signup">Sign up</S.SignupLink>
           </S.SignupText>
         </S.LoginCard>
