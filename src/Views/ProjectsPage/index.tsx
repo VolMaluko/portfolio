@@ -15,6 +15,13 @@ export default function ProjectsPage() {
       image: "LoginPage.png",
       link: "/login",
     },
+    {
+      title: "Comment Section Project",
+      description:
+        "Um projeto simples de seção de comentários, sem link com database",
+      image: "comment.png",
+      link: "/comments",
+    },
   ];
 
   return (

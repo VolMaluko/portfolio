@@ -4,7 +4,7 @@ export const WorksContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding: 20px;
+  padding: 3rem;
   height: 100dvh;
   background-color: #1a1a1a;
 `;
@@ -14,14 +14,26 @@ export const WorkCard = styled.div`
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   margin-top: 6rem;
-  width: 300px;
-  max-height: 20%;
+  width: 325px;
+  height: 23%;
+  max-height: 100%;
+  max-width: 100%;
   overflow: hidden;
   position: relative;
   transition: transform 0.2s;
 
   &:hover {
     transform: scale(1.05);
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 300px;
+    height: 30%;
+    padding: 0rem;
+    margin-top: 0px;
+    &:first-child {
+      margin-top: 3rem;
+    }
   }
 `;
 
