@@ -10,6 +10,13 @@ export const CommentSection = styled.div`
   background-color: #f9f9f9;
   border: 1px solid #ccc; /* Borda opcional */
   border-radius: 8px; /* Bordas arredondadas */
+
+  @media screen and (max-width: 768px) {
+    width: 300px;
+    height: 30%;
+    padding: 3rem;
+    margin-top: 0px;
+  }
 `;
 
 export const CommentInputContainer = styled.div`

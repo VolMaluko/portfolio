@@ -7,18 +7,19 @@ export const WorksContainer = styled.div`
   padding: 3rem;
   height: 100dvh;
   background-color: #1a1a1a;
+  overflow-y: scroll;
+  padding: 0.3rem;
 `;
 
 export const WorkCard = styled.div`
   background: #2c2c2c;
-  border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   margin-top: 6rem;
   width: 325px;
   height: 23%;
   max-height: 100%;
   max-width: 100%;
-  overflow: hidden;
+
   position: relative;
   transition: transform 0.2s;
 
@@ -27,10 +28,11 @@ export const WorkCard = styled.div`
   }
 
   @media screen and (max-width: 768px) {
-    width: 300px;
-    height: 30%;
+    width: 325px;
+    height: 35%;
     padding: 0rem;
     margin-top: 0px;
+
     &:first-child {
       margin-top: 3rem;
     }
@@ -40,7 +42,7 @@ export const WorkCard = styled.div`
 export const WorkImage = styled.img`
   width: 100%;
   height: 200px;
-  object-fit: cover;
+  object-fit: fit;
   transition: transform 0.3s;
   z-index: 1;
 `;
@@ -54,7 +56,7 @@ export const WorkContent = styled.div`
   padding: 15px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   z-index: 2;
   background: rgba(0, 0, 0, 0.5);
 `;

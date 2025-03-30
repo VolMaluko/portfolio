@@ -19,22 +19,17 @@ export const Container = styled.div`
   border-radius: 12px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
   padding: 2rem;
-  width: 750px;
+  width: 600px;
   max-width: 100%;
-  min-height: 40%;
+  min-height: 50%;
+  max-height: 50%;
   transition: background-color 0.3s ease;
-`;
+  overflow-y: scroll;
 
-export const DeleteContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  background-color: ${({ theme }) => theme.deleteBackground};
-  border-radius: 12px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-  margin-top: 10px;
-  height: 100px;
-  max-width: 100%;
-  transition: background-color 0.3s ease;
+  @media screen and (max-width: 768px) {
+    height: 350px;
+    max-width: 350px;
+  }
 `;
 
 export const Header = styled.header`
@@ -156,8 +151,14 @@ export const DeleteAllButton = styled.button`
   cursor: pointer;
   transition: background-color 0.3s;
   max-height: 45px;
+
   &:hover {
     background-color: #c82333;
+  }
+  @media screen and (max-width: 768px) {
+    margin-left: 10px;
+    height: 100px;
+    max-width: 120px;
   }
 `;
 
@@ -176,4 +177,21 @@ export const DeleteSelectedButton = styled.button`
   &:hover {
     background-color: #c82333;
   }
+  @media screen and (max-width: 768px) {
+    margin-right: 10px;
+    height: 100px;
+    max-width: 120px;
+  }
+`;
+
+export const DeleteContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  background-color: ${({ theme }) => theme.deleteBackground};
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+  height: 100px;
+  max-width: 100%;
+  transition: background-color 0.3s ease;
 `;
