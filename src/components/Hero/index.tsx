@@ -28,7 +28,7 @@ export default function HeroSection() {
           scrambled it to make a type specimen book.
         </p>
         <S.ConnectButton href="/login">
-          Look one of my works &quot;Login Page&quot;
+          Take a look
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"

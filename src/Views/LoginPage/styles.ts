@@ -81,20 +81,20 @@ export const Input = styled.input`
   border: 1px solid #d1d5db;
   border-radius: 0.375rem;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  background-color: white; /* Garante que o fundo sempre será branco */
+  background-color: white;
   color: #374151;
   &:focus {
     outline: none;
     border-color: #7e57c2;
     box-shadow: 0 0 0 3px rgba(126, 87, 194, 0.2);
     color: #374151 !important;
-    background-color: white; /* Mantém o fundo branco mesmo em foco */
+    background-color: white;
   }
   &:-webkit-autofill {
     background-color: white !important;
     -webkit-box-shadow: 0 0 0px 1000px white inset !important;
-    -webkit-text-fill-color: #374151 !important; /* Força a cor correta do texto */
-    caret-color: #374151 !important; /* Define a cor do cursor */
+    -webkit-text-fill-color: #374151 !important;
+    caret-color: #374151 !important;
   }
 `;
 

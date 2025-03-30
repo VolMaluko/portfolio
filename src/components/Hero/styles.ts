@@ -76,7 +76,7 @@ export const ConnectButton = styled.a`
   display: flex;
   align-items: center;
   gap: 6px;
-  max-width: 37.4%;
+  max-width: 17%;
   max-height: 100%;
 
   @media (max-width: 1024px) {
