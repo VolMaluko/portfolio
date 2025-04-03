@@ -85,7 +85,7 @@ export const PasswordToggle = styled.button`
   position: absolute;
   right: 0.75rem;
   top: 53%;
-  transform: translateY(-50%);
+  transform: translateY(-34%);
   background: none;
   border: none;
   cursor: pointer;

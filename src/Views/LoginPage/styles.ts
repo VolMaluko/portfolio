@@ -174,3 +174,21 @@ export const SignupLink = styled.a`
     color: #6a34be;
   }
 `;
+
+export const ErrorMessage = styled.p`
+  color: red;
+  background: #ffe6e6;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 10px;
+`;
+
+export const SuccessMessage = styled.p`
+  color: green;
+  background: #e6ffe6;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 10px;
+`;

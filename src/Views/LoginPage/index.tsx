@@ -1,17 +1,39 @@
-"use client";
 import { useState } from "react";
 import * as S from "./styles";
 import { Eye, EyeOff } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+  const router = useRouter();
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Login attempt with:", { email, password });
+    setError("");
+    setSuccess("");
+
+    const response = await fetch("/api/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, password }),
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      setSuccess("Login realizado com sucesso!");
+      router.push("/dashboard");
+    } else {
+      setError(data.message || "Erro ao fazer login");
+    }
   };
+
   return (
     <>
       <S.GlobalStyle />
@@ -63,10 +85,15 @@ export default function LoginPage() {
                 Forgot password?
               </S.ForgotPasswordLink>
             </S.RememberForgotContainer>
+
+            {error && <S.ErrorMessage>{error}</S.ErrorMessage>}
+            {success && <S.SuccessMessage>{success}</S.SuccessMessage>}
+
+            <S.SubmitButton type="submit">Sign In</S.SubmitButton>
           </S.Form>
-          <S.SubmitButton type="submit">Sign In</S.SubmitButton>
+
           <S.SignupText>
-            Don t have an account?{" "}
+            Don’t have an account?{" "}
             <S.SignupLink href="/signup">Sign up</S.SignupLink>
           </S.SignupText>
         </S.LoginCard>

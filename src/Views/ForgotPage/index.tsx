@@ -4,10 +4,29 @@ import { Mail } from "lucide-react";
 
 export default function ForgotPage() {
   const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Forgot Password submitted", { email });
+    setError("");
+    setSuccess("");
+
+    const response = await fetch("/api/forgot", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email }),
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      setSuccess("E-mail de recuperação enviado com sucesso!");
+    } else {
+      setError(data.message || "Erro ao enviar e-mail de recuperação");
+    }
   };
 
   return (
@@ -29,9 +48,10 @@ export default function ForgotPage() {
                 required
               />
             </S.InputWrapper>
+            {error && <S.ErrorMessage>{error}</S.ErrorMessage>}
+            {success && <S.SuccessMessage>{success}</S.SuccessMessage>}
+            <S.Button type="submit">Send Reset Link</S.Button>
           </S.Form>
-
-          <S.Button type="submit">Send Reset Link</S.Button>
 
           <S.AuthFooter>
             Remember your password? <S.Link href="/login">Back to Login</S.Link>

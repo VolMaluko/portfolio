@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import * as S from "./styles"; // Importando os estilos
+import * as S from "./styles";
 
 const CommentApp = () => {
   const [comments, setComments] = useState<{ text: string; comment: string }[]>(
@@ -11,8 +11,8 @@ const CommentApp = () => {
   const handleAddComment = () => {
     if (text && comment) {
       setComments([...comments, { text, comment }]);
-      setText(""); // Limpa o input
-      setComment(""); // Limpa a textarea
+      setText("");
+      setComment("");
     }
   };
 
@@ -45,4 +45,4 @@ const CommentApp = () => {
   );
 };
 
-export default CommentApp; // Exportando o componente
+export default CommentApp;

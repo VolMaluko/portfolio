@@ -56,20 +56,20 @@ export const Input = styled.input`
   font-size: 1rem;
   border-radius: 0.5rem;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  background-color: white; /* Garante que o fundo sempre será branco */
+  background-color: white;
   color: #374151;
   &:focus {
     outline: none;
     border-color: #7e57c2;
     box-shadow: 0 0 0 3px rgba(126, 87, 194, 0.2);
     color: #374151 !important;
-    background-color: white; /* Mantém o fundo branco mesmo em foco */
+    background-color: white;
   }
   &:-webkit-autofill {
     background-color: white !important;
     -webkit-box-shadow: 0 0 0px 1000px white inset !important;
-    -webkit-text-fill-color: #374151 !important; /* Força a cor correta do texto */
-    caret-color: #374151 !important; /* Define a cor do cursor */
+    -webkit-text-fill-color: #374151 !important;
+    caret-color: #374151 !important;
   }
 `;
 
@@ -113,4 +113,22 @@ export const Link = styled.a`
   &:hover {
     text-decoration: underline;
   }
+`;
+
+export const ErrorMessage = styled.p`
+  color: red;
+  background: #ffe6e6;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 10px;
+`;
+
+export const SuccessMessage = styled.p`
+  color: green;
+  background: #e6ffe6;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 10px;
 `;

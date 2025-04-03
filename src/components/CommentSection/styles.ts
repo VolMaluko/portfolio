@@ -3,13 +3,13 @@ import styled from "styled-components";
 export const CommentSection = styled.div`
   display: flex;
   flex-direction: column;
-  max-height: 500px; /* Altura máxima da seção de comentários */
+  max-height: 500px;
   max-width: 600px;
   width: 600px;
   padding: 20px;
   background-color: #f9f9f9;
-  border: 1px solid #ccc; /* Borda opcional */
-  border-radius: 8px; /* Bordas arredondadas */
+  border: 1px solid #ccc;
+  border-radius: 8px;
 
   @media screen and (max-width: 768px) {
     width: 300px;
@@ -20,7 +20,7 @@ export const CommentSection = styled.div`
 `;
 
 export const CommentInputContainer = styled.div`
-  margin-bottom: 20px; /* Espaço entre o input e a lista de comentários */
+  margin-bottom: 20px;
 `;
 
 export const CommentInput = styled.input`
@@ -39,16 +39,16 @@ export const CommentTextArea = styled.textarea`
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  resize: none; /* Impede o redimensionamento */
-  height: 100px; /* Altura fixa */
+  resize: none;
+  height: 100px;
   color: black;
   background-color: white;
 `;
 
 export const CommentList = styled.div`
-  flex-grow: 1; /* Permite que a lista de comentários ocupe o espaço restante */
-  overflow-y: auto; /* Adiciona rolagem se necessário */
-  margin-top: 10px; /* Espaço entre o input e a lista de comentários */
+  flex-grow: 1;
+  overflow-y: auto;
+  margin-top: 10px;
 `;
 
 export const CommentItem = styled.div`
