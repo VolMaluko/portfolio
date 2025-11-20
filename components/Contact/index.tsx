@@ -51,10 +51,10 @@ export function Contact() {
 					viewport={{ once: true }}
 					transition={{ duration: 0.6 }}
 					className='text-center mb-16'>
-					<h2 className='mb-4 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent'>
+					<h2 className='mb-4 bg-linear-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent'>
 						Entre em Contato
 					</h2>
-					<div className='w-20 h-1 bg-gradient-to-r from-cyan-500 to-blue-600 mx-auto rounded-full' />
+					<div className='w-20 h-1 bg-linear-to-r from-cyan-500 to-blue-600 mx-auto rounded-full' />
 				</motion.div>
 
 				<div className='grid lg:grid-cols-2 gap-12'>
@@ -82,7 +82,7 @@ export function Contact() {
 									viewport={{ once: true }}
 									transition={{ duration: 0.6, delay: index * 0.1 }}
 									className='flex items-center gap-4 p-4 bg-slate-900/50 border border-cyan-500/20 rounded-xl hover:border-cyan-500/50 transition-colors group'>
-									<div className='w-12 h-12 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform'>
+									<div className='w-12 h-12 bg-linear-to-br from-cyan-500/20 to-blue-500/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform'>
 										<info.icon className='text-cyan-400' size={20} />
 									</div>
 									<div>
@@ -100,7 +100,7 @@ export function Contact() {
 						viewport={{ once: true }}
 						transition={{ duration: 0.6 }}
 						className='relative'>
-						<div className='absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-2xl blur-xl' />
+						<div className='absolute inset-0 bg-linear-to-br from-cyan-500/10 to-blue-500/10 rounded-2xl blur-xl' />
 						<form
 							onSubmit={handleSubmit}
 							className='relative p-8 bg-slate-900/50 border border-cyan-500/20 rounded-2xl space-y-6'>
@@ -157,7 +157,7 @@ export function Contact() {
 
 							<Button
 								type='submit'
-								className='w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 border-0'>
+								className='w-full bg-linear-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 border-0'>
 								<Send size={16} className='mr-2' />
 								Enviar Mensagem
 							</Button>
