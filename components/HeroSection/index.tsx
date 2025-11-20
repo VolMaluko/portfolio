@@ -10,10 +10,8 @@ export function Hero() {
 		<section
 			id='hero'
 			className='relative min-h-screen flex items-center justify-center overflow-hidden pt-16'>
-			{/* Animated Background Grid */}
 			<div className='absolute inset-0 bg-[linear-gradient(to_right,#1e293b_0.7px,transparent_0.7px),linear-gradient(to_bottom,#1e293b_0.7px,transparent_0.7px)] bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_30%_50%_at_50%_50%,#000_20%,transparent_140%)]' />
 
-			{/* Glowing Orbs */}
 			<div className='absolute bottom-2 left-1/5 w-96 h-96 bg-cyan-300/20 rounded-full blur-3xl animate-pulse' />
 			<div className='absolute bottom-1/4 right-1 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl animate-pulse delay-1000' />
 			<div className='absolute top-1 left-3/6 w-96 h-96 bg-purple-100/20 rounded-full blur-3xl animate-pulse' />
@@ -58,12 +56,12 @@ export function Hero() {
 						transition={{ delay: 0.8 }}
 						className='flex flex-wrap gap-4 justify-center mb-12'>
 						<Button className='bg-linear-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 border-0'>
-							Ver Projetos
+							<a href='#projects'>Ver Projetos</a>
 						</Button>
 						<Button
 							variant='outline'
 							className='border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10'>
-							Entre em Contato
+							<a href='#contact'>Entre em Contato</a>
 						</Button>
 					</motion.div>
 

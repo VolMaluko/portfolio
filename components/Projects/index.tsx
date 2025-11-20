@@ -87,9 +87,9 @@ export function Projects() {
 							whileInView={{ opacity: 1, y: 0 }}
 							viewport={{ once: true }}
 							transition={{ duration: 0.6, delay: index * 0.1 }}
-							className='group relative'>
+							className='group relative flex flex-col h-full'>
 							<div className='absolute inset-0 bg-linear-to-br from-cyan-500/10 to-blue-500/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all' />
-							<div className='relative bg-slate-900/50 border border-cyan-500/20 rounded-2xl overflow-hidden hover:border-cyan-500/50 transition-all'>
+							<div className='relative bg-slate-900/50 border border-cyan-500/20 rounded-2xl overflow-hidden hover:border-cyan-500/50 transition-all flex flex-col h-full'>
 								<div className='relative aspect-video overflow-hidden'>
 									<ImageWithFallback
 										src={project.image}
@@ -99,7 +99,7 @@ export function Projects() {
 									<div className='absolute inset-0 bg-linear-to-t from-slate-900 via-slate-900/50 to-transparent opacity-60' />
 								</div>
 
-								<div className='p-6'>
+								<div className='p-6 flex flex-col flex-1'>
 									<h3 className='mb-3 text-slate-100'>{project.title}</h3>
 									<p className='text-slate-400 mb-4'>{project.description}</p>
 
@@ -113,7 +113,7 @@ export function Projects() {
 										))}
 									</div>
 
-									<div className='flex gap-3'>
+									<div className='flex gap-3 mt-auto'>
 										<Button
 											variant='outline'
 											size='sm'

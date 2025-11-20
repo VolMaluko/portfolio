@@ -18,7 +18,6 @@ export function Contact() {
 	const handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault();
 		console.log("Form submitted:", formData);
-		// Adicionar lógica de envio aqui
 	};
 
 	const contactInfo = [
@@ -171,7 +170,10 @@ export function Contact() {
 					viewport={{ once: true }}
 					transition={{ duration: 0.6 }}
 					className='mt-20 pt-8 border-t border-cyan-500/20 text-center text-slate-400'>
-					<p>© 2025 João Developer. Todos os direitos reservados.</p>
+					<p>
+						Se serviu de inspiração para o seu portfolio, entre em contato :D
+						vamos trocar experiências!
+					</p>
 				</motion.div>
 			</div>
 		</section>
